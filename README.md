@@ -9,7 +9,7 @@ Homedirectories residing on the root filesytem are a likely cause of running of 
 To do so, start by creating extra storage in SURF Research Cloud by following the [instructions](https://servicedesk.surf.nl/wiki/spaces/WIKI/pages/19825226/External+storage+volumes) on the SURF Research Cloud Wiki. Make sure to give it a clear and recognizable name, such as _storage\_home_. We'll be using this name in the rest of the instructions.
 
 ## Technical support
-The steps below can, if not properly executed, lead to an unreachable workspace on SRC. If you do not feel comfortable performing these steps yourself, please reach out to Digital Research Support at Tilburg University (digitalresearchsupport@tilburguniversity.edu and one of our engineers can walk you through the process).
+The steps below can, if not properly executed, lead to an unreachable workspace on SRC. If you are a researcher at Tilburg University and you do not feel comfortable performing these steps yourself, please reach out to Digital Research Support at Tilburg University (digitalresearchsupport@tilburguniversity.edu and one of our engineers can walk you through the process).
 
 ### Pre-flight checks
 After the new storage is available and connected to your workspace, go through the following steps to move the homedirectories to this new storage:
@@ -28,8 +28,8 @@ Follow these instructions to enable root SSH access to the workspace:
 2. Switch to root with the command `sudo su`.
 3. Move the original _authorized\_keys_ file for root to _old\_authorized\_keys_ for safekeeping: `mv /root/.ssh/authorized_keys /root/.ssh/old_authorized_keys`
 4. Add your own public key to a new _authorized\_keys_ file in order to be able to log into SSH as root: `echo '<YOUR OWN PUBLIC KEY HERE>' >> /root/.ssh/authorized_keys`
-5. To be safe, set permissions on the new file: `chmod 600 /root/.ssh/authorized_keys`
-6. To be safe, set ownership on the new file: `chown root:root /root/.ssh/authorized_keys`
+5. Set permissions on the new file: `chmod 600 /root/.ssh/authorized_keys`
+6. Set ownership on the new file: `chown root:root /root/.ssh/authorized_keys`
 
 Now test if root SSH access is succesful by logging out of the workspace and log back in using _root_ as the username. If all is well, you'll now be able to log in as the _root_-user. If not, please make sure you've followed the steps above correctly. Please do not continue with the following steps if root SSH access is not correctly set up.
 
